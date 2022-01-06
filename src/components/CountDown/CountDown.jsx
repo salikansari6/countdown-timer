@@ -26,11 +26,14 @@ const CountDown = () => {
   const secondText = Math.floor((remainingTime % minute) / second);
 
   return (
-    <div className="countdown__container">
-      <TimeCard text={dayText} />
-      <TimeCard text={hourText} />
-      <TimeCard text={minuteText} />
-      <TimeCard text={secondText} />
+    <div className="countdown">
+      <h1 className="heading">WE'RE LAUNCHING SOON</h1>
+      <div className="countdown__container">
+        <TimeCard title="days" text={dayText} />
+        <TimeCard title="hours" text={hourText} />
+        <TimeCard title="minutes" text={minuteText} />
+        <TimeCard title="seconds" text={secondText} />
+      </div>
     </div>
   );
 };

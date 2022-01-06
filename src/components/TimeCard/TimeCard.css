@@ -9,6 +9,7 @@
   color: hsl(345, 84%, 63%);
   font-size: 100px;
   font-weight: bold;
+  overflow: hidden;
 }
 
 .time-card__upper,
@@ -37,7 +38,7 @@
 
 .time-card__upper-dark-effect {
   border-radius: 10px 10px 0 0;
-  background: black;
+  background: rgba(0, 0, 0, 0.8);
   top: 0;
   z-index: 20;
   opacity: 0.2;
@@ -51,6 +52,40 @@
   bottom: 0;
 }
 
+.mid-line::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+
+  margin-top: -10px;
+  margin-left: -7px;
+  border-radius: 50%;
+  left: 0;
+  background: hsl(235, 16%, 14%);
+}
+
+.mid-line::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 0;
+  margin-top: -10px;
+  margin-right: -7px;
+  border-radius: 50%;
+  background: hsl(235, 16%, 14%);
+}
+
 .time-card__text {
   z-index: 10;
+}
+
+.time-card__title {
+  margin-top: 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: hsl(237, 18%, 59%);
+  text-align: center;
+  letter-spacing: 6px;
 }

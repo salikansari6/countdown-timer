@@ -1,4 +1,18 @@
+.countdown {
+  height: 50vh;
+  margin-top: 5rem;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .countdown__container {
   display: flex;
   gap: 50px;
+}
+
+.heading {
+  color: white;
+  letter-spacing: 6px;
 }
