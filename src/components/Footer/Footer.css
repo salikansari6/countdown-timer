@@ -1,0 +1,7 @@
+footer {
+  display: flex;
+  gap: 30px;
+  z-index: 20;
+  margin-top: auto;
+  padding: 50px 0;
+}

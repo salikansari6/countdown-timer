@@ -14,9 +14,13 @@ const CountDown = () => {
   const day = hour * 24;
 
   useEffect(() => {
-    setInterval(() => {
+    let interval = setInterval(() => {
       setRemainingTime(END_TIME - Date.now());
     }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
 
   const dayText = Math.floor(remainingTime / day);
