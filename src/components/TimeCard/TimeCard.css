@@ -1,0 +1,56 @@
+.time-card {
+  position: relative;
+  height: 150px;
+  width: 170px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(345, 84%, 63%);
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.time-card__upper,
+.time-card__lower,
+.time-card__upper-dark-effect {
+  position: absolute;
+  width: 100%;
+}
+
+.time-card__upper {
+  /* z-index: 20; */
+  border-radius: 10px 10px 0 0;
+  /* border-bottom: 1px solid #29293f; */
+  background: #414161;
+  top: 0;
+  bottom: 50%;
+}
+
+.mid-line {
+  width: 100%;
+  position: absolute;
+  height: 1px;
+  z-index: 30;
+  background: #29293f;
+}
+
+.time-card__upper-dark-effect {
+  border-radius: 10px 10px 0 0;
+  background: black;
+  top: 0;
+  z-index: 20;
+  opacity: 0.2;
+  bottom: 50%;
+}
+
+.time-card__lower {
+  border-radius: 0 0 8px 8px;
+  background: #414161;
+  top: 50%;
+  bottom: 0;
+}
+
+.time-card__text {
+  z-index: 10;
+}
