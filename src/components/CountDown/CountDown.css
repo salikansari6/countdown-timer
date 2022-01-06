@@ -9,10 +9,29 @@
 
 .countdown__container {
   display: flex;
+  justify-content: center;
   gap: 50px;
 }
 
 .heading {
   color: white;
   letter-spacing: 6px;
+}
+
+@media (max-width: 800px) {
+  .countdown__container {
+    gap: 12px;
+  }
+
+  .heading {
+    font-size: 20px;
+    padding: 0 20px;
+  }
+}
+
+.countdown__finished {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 3px;
 }

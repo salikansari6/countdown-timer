@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import TimeCard from "../TimeCard/TimeCard";
 import "./CountDown.css";
 
-const END_TIME = new Date("January 10, 2022 03:24:00").getTime();
+const END_TIME = new Date("January 20, 2022 00:00").getTime();
 const CURRENT_TIME = Date.now();
 const DIFFERENCE = END_TIME - CURRENT_TIME;
 
 const CountDown = () => {
   const [remainingTime, setRemainingTime] = useState(DIFFERENCE);
-
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
@@ -29,10 +28,16 @@ const CountDown = () => {
     <div className="countdown">
       <h1 className="heading">WE'RE LAUNCHING SOON</h1>
       <div className="countdown__container">
-        <TimeCard title="days" text={dayText} />
-        <TimeCard title="hours" text={hourText} />
-        <TimeCard title="minutes" text={minuteText} />
-        <TimeCard title="seconds" text={secondText} />
+        {remainingTime > 0 ? (
+          <>
+            <TimeCard title="days" text={dayText} />
+            <TimeCard title="hours" text={hourText} />
+            <TimeCard title="minutes" text={minuteText} />
+            <TimeCard title="seconds" text={secondText} />
+          </>
+        ) : (
+          <p className="countdown__finished">COUNTDOWN FINISHED</p>
+        )}
       </div>
     </div>
   );
