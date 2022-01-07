@@ -8,21 +8,28 @@ const DIFFERENCE = END_TIME - CURRENT_TIME;
 
 const CountDown = () => {
   const [remainingTime, setRemainingTime] = useState(DIFFERENCE);
+
+  //Defining time units in milliseconds
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
 
-  useEffect(() => {
-    let interval = setInterval(() => {
-      setRemainingTime(END_TIME - Date.now());
-    }, 1000);
+  const updateCountDown = () => {
+    setRemainingTime(END_TIME - Date.now());
+  };
 
+  useEffect(() => {
+    //Updates the countdown every second
+    let interval = setInterval(updateCountDown, 1000);
+
+    //clearing interval whenever component unmounts
     return () => {
       clearInterval(interval);
     };
   }, []);
 
+  //Converting milliseconds value of remaining time to appropriate time units to display on UI
   const dayText = Math.floor(remainingTime / day);
   const hourText = Math.floor((remainingTime % day) / hour);
   const minuteText = Math.floor((remainingTime % hour) / minute);
