@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import TimeCard from "../TimeCard/TimeCard";
 import "./CountDown.css";
 
-const END_TIME = new Date("January 20, 2022 00:00").getTime();
+const END_TIME = new Date("June 1, 2022 00:00").getTime();
 const CURRENT_TIME = Date.now();
 const DIFFERENCE = END_TIME - CURRENT_TIME;
 
